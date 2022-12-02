@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercise javaScript</title>
+</head>
+
+<body>
+        <form class="form">
+                <input class="guess-number" type="number" placeholder="enter your guess">
+                <button type="submit">check</button>
+
+                <h2 class="score"></h2>
+
+        </form>
+
+        <script>
+                const form = document.querySelector('.form')
+                const inputNum = document.querySelector('.guess-number')
+                const scoreMessage = document.querySelector('.score')
+
+                let guessChances = 100
+                const randomNum = Math.ceil(Math.random() * 100)
+
+
+                form.addEventListener('submit', (e) => {
+                        e.preventDefault()
+                        checkIfGuessIsCorrect(+inputNum.value)
+                        inputNum.value = ''
+                        scoreMessage.textContent = `Score is ${guessChances}`
+                })
+
+                function checkIfGuessIsCorrect(userInputNum) {
+                        if (userInputNum === randomNum) {
+                                console.log('yeayy your guess is correct and your score is', guessChances)
+                        } else if (userInputNum < randomNum) {
+                                guessChances -= 1
+                                console.log('oops your guess is low than the secret number, try again your score is', guessChances)
+                        } else {
+                                guessChances -= 1
+                                console.log('oops your guess is high than than the secret number, try again your score is', guessChances)
+                        }
+                }
+        </script>
+</body>
+
+</html>
