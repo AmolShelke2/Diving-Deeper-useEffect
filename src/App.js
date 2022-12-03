@@ -29,5 +29,3 @@ function App() {
 }
 
 export default App;
-
-// Learnt about Effects and SideEffects
