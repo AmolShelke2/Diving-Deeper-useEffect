@@ -9,10 +9,10 @@ function App() {
 
   useEffect(() => {
     // getting that isLoggedIn localStorage value
-    const isLoggedInInfo = localStorage.getItem('isLoggedIn');
+    const isLoggedInLocalStorageInfo = localStorage.getItem('isLoggedIn');
 
     // creating a condition where if the user logged in once and reload the page he/she will always be logged in
-    if (isLoggedInInfo) {
+    if (isLoggedInLocalStorageInfo) {
       setIsLoggedIn(true);
     }
   }, []);
