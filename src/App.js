@@ -43,5 +43,3 @@ function App() {
 }
 
 export default App;
-
-// what to add and what not to add as dependencies
