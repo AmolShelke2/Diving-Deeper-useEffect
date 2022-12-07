@@ -16,6 +16,14 @@ const Login = props => {
   };
 
   useEffect(() => {
+    console.log('Effect Running');
+
+    return () => {
+      console.log('Effect Clean Up');
+    };
+  }, [enteredPassword]);
+
+  useEffect(() => {
     const identifier = setTimeout(() => {
       console.log('checking form validity');
       setFormIsValid(
