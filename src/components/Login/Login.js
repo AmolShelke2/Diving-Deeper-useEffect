@@ -96,5 +96,3 @@ const Login = props => {
 };
 
 export default Login;
-
-// Started Back learning React.
